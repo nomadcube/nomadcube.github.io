@@ -1,0 +1,29 @@
+# Dependencies
+markdown:         kramdown
+kramdown:
+  input: GFM
+
+highlighter:         pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            'Mengling Ng'
+tagline:          'pseudo-geek'
+description:      'Hi there!'
+url:              http://lanyon.getpoole.com
+
+author:
+  name:           'Mark Otto'
+  url:            https://twitter.com/mdo
+
+paginate:         5
+
+# Custom vars
+version:          2.0.0
+
+github:
+  repo:           https://github.com/poole/lanyon
+
+gems: [jekyll-paginate]
