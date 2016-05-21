@@ -21,4 +21,4 @@ tags: Spark 杂项
 
 4. 在执行2的shell下执行```./spark-submit --class org.wumengling.fun.pkg.TestForFun /Users/wumengling/Documents/TestForFun/target/fun-1.0-SNAPSHOT.jar```
 
-这4步完成，提交之后正常情况下会看到```Listening for transport dt_socket at address: 7777```，表示这个JVM进程已经被监听，其中端口为7777。这时候就可以转到本地idea开始debug了。
+这4步完成，提交之后正常情况下会看到```Listening for transport dt_socket at address: 7777```，表示这个JVM已经被监听，其中端口为7777。这时候就可以转到本地idea开始debug了。
