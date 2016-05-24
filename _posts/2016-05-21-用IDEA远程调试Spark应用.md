@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: Spark 杂项
+tags: Spark
 ---
 
 针对的场景是，用本地的idea对在远程环境中运行的Spark应用进行调试。
