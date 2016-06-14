@@ -9,7 +9,6 @@ highlighter:         pygments
 permalink:        pretty
 
 # Setup
-title:            '西伯利亚游牧人'
 url:              http://lanyon.getpoole.com
 
 author:
