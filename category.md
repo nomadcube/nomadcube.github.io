@@ -4,7 +4,7 @@ title: 按Tag归档
 ---
 
 {% for category in site.tags %}
-  <li>{{ category | first }}</a>
+  <li>{{ category | first }}
     <ul>
     {% for posts in category %}
       {% for post in posts %}
