@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 按时间归档
+title: 所有文章
 ---
 
 {% for post in site.posts %}
