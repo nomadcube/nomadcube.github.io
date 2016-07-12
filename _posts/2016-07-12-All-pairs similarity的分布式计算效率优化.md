@@ -11,7 +11,7 @@ tags: 推荐引擎
 
 ### DIMSUM算法
 
-### 在不同场景下各算法的复杂度分析（时间、空间、shuffle）
+### 在不同场景下各算法的复杂度分析（时间、空间、shuffle size、reduce-key complexity）
 
 参考资料
 
