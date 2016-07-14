@@ -21,6 +21,12 @@ tags: 推荐算法
 3中得到的值对应的就是第$$i, j$$个物品对的cosine相似度。
 
 ### sampling方法（DISCO/DIMSUM v1/DIMSUM v2）
+可以看出Naive M/R算法无论是Map还是Reduce阶段，计算量或shuffle size都与特征维度大小（即$$N$$）有关：
+
+- 分区中共有$$N$$个需要做Map操作的元素$$r$$
+- 以特定的$$(i^*, j^*)$$为键值的元组$$(i^*, j^*), r_{i^*} * r_{j^*}$$的数量量级在$$O(N)$$上
+
+于是一种"dimension-independent"的相似度矩阵计算方法就被提出。这里所谓的dimension，在推荐系统的场景下一般是指实体的特征维度，比如基于内容推荐中的内容属性维度、itemCF中的用户数。它的思想是在Naive M/R算法的Map阶段进行重抽样，即
 
 ### 在不同场景下各算法的复杂度分析（时间、空间、shuffle size、reduce-key complexity）
 
