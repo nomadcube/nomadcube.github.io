@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 按Tag归档
+title: 归档
 ---
 
 {% for category in site.tags %}
