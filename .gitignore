@@ -40,3 +40,6 @@ validation-report.json
 # Folders to ignore
 node_modules
 bower_components
+
+/_posts/2016-09-04-更规范的一些做法.md
+/_posts/2016-08-02-推荐系统的一些经验总结.md
