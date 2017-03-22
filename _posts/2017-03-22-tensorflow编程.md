@@ -9,3 +9,8 @@ tags: 深度学习
 
 ### placeholder
 placeholder是一种tensor类型，和其它各种tensor一样，它也可以对python的各种张量形式的数据类型进行封装。而它的特点在于，它在定义时是空的，只有让python程序给它feed数据之后才能对它做evaluation. 而feed数据的形式，可以用一个dict, 即 ```{palcaholder: python值}```这样的形式。
+
+### 读数据
+主要是3种形式：用python数据去feed；从本地文件读取；直接初始化constance或variable. 可见第一种是对应于placeholder这类tensor的。
+在docker中使用tensorflow时，如果要选择从本地文件读取数据，那么需要先在docker的tensorflow目录下建立文件，在当前目录启动python, 再用TextLineReader和decode_csv进行读文件及解析csv文件。
+
