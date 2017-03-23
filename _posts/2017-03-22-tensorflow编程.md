@@ -14,4 +14,4 @@ placeholder是一种tensor类型，和其它各种tensor一样，它也可以对
 主要是3种形式：用python数据去feed；从本地文件读取；直接初始化constance或variable. 可见第一种是对应于placeholder这类tensor的。
 在docker中使用tensorflow时，如果要选择从本地文件读取数据，那么需要先在docker的tensorflow目录下建立文件，在当前目录启动python, 再用TextLineReader和decode_csv进行读文件及解析csv文件。
 
-![aaa](https://github.com/nomadcube/nomadcube.github.io/blob/master/public/test_pic.png)
+![xxx](/public/test_pic.png)
