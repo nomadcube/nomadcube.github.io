@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: 深度学习
+tags: 草稿
 ---
 
 tensorflow接口包括tf-core这些底层的接口，以及如tf-train这些高层次的接口。

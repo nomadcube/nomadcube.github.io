@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: 深度学习
+tags: 草稿
 ---
 
 在tensorflow编程时需要定义计算图，计算图的基本组成是tensor和operation, tensor相当于数据，operation相当于运算。tensor作为operation的输入和输出。
