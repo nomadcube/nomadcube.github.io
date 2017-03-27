@@ -21,4 +21,4 @@ placeholder是一种tensor类型，和其它各种tensor一样，它也可以对
 在docker中使用tensorflow时，如果要选择从本地文件读取数据，那么需要先在docker的tensorflow目录下建立文件，在当前目录启动python, 再用TextLineReader和decode_csv进行读文件及解析csv文件。
 
 ### 参考文献
-*MXNet: A Flexible and Efficient Machine Learning Library for Heterogeneous Distributed Systems*
+[1] *MXNet: A Flexible and Efficient Machine Learning Library for Heterogeneous Distributed Systems*
