@@ -9,6 +9,8 @@ highlighter:         pygments
 permalink:        pretty
 
 # Setup
+title:  wumulu
+tagline:             "hey it's me"
 url:              http://lanyon.getpoole.com
 
 author:
@@ -24,3 +26,4 @@ github:
   repo:           https://github.com/poole/lanyon
 
 gems: [jekyll-paginate]
+
