@@ -116,11 +116,11 @@ with tf.Session() as sess:
         batch = mnist.train.next_batch(50)
         if i % 100 == 0:
             train_accuracy = accuracy.eval(feed_dict={
-                x: batch[0], y_: batch[1]})
+                x: batch[0], y_: batch[1], keep_prob: 1.0})
             print("step %d, training accuracy %g" % (i, train_accuracy))
-        train_step.run(feed_dict={x: batch[0], y_: batch[1]})
+        train_step.run(feed_dict={x: batch[0], y_: batch[1], keep_prob: 0.5})
     print("test accuracy %g" % accuracy.eval(feed_dict={
-        x: mnist.test.images, y_: mnist.test.labels}))
+        x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}))
 
 {% endhighlight %}
 
@@ -133,3 +133,13 @@ ReLU激活是简单地将小于0的值都不激活，这就使得这个```[-1, 2
 pooling要做的与张量的深度无关，只与它的长和宽有关。2*2 max pooling是将原始图像中任何一个 2*2 格子都只挑值最大的那个进入下一层。从直观上理解相当于只挑那些最显著的图像特征。因此数据量也随之缩小到```[-1, 14, 14, 32]```.
 
 这也就是为什么说深度学习是在替代人工做特征工程了。
+
+以下是在laptop上训练一个CNN模型的过程，这里使用的mini-batch大小是50张图片，共迭代10000次，也就是说这会遍达500000次图片，如果总共有20000张图，那么这个网络的epoch量就是25. 一般来说在CNN中，mini-batch越大，会使得模型变差。
+
+![cnn_training](/public/cnn_training.png)
+
+参考资料
+[1] http://stats.stackexchange.com/questions/164876/tradeoff-batch-size-vs-number-of-iterations-to-train-a-neural-network
+
+[2] https://www.tensorflow.org/get_started/mnist/pros
+
