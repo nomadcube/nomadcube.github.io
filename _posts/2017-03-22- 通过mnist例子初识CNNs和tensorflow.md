@@ -3,10 +3,10 @@ layout: post
 tags: 深度学习
 ---
 
-MNIST是典型的图像分类任务，类别对应于0~9的这10个数字，输入则是若干张灰度图。至于为什么用灰度图就可以呢？直观来看，是因为我们只需要根据轮廓就可以区分出图中是哪个数字，即使用上了彩色图，其中的色彩数据也不会带来对这个任务来说有用的信息。
+mnist是典型的图像分类任务，类别对应于0~9的这10个数字，输入则是若干张灰度图。至于为什么用灰度图就可以呢？直观来看，是因为我们只需要根据轮廓就可以区分出图中是哪个数字，即使用上了彩色图，其中的色彩数据也不会给这个任务带来更多有用的信息。
 
 ### **softmax lr及在tensorflow上的实现**
-对于有机器学习基础的人来说，分类任务不能更常见了。对于多类别的分类任务来说，最简单的模型莫过于softmax lr, 也就是说以图像中每个像素点的灰度值作为特征，参数大小为$$n*n*1*10$$, 其中$$n*n$$为图片的像素大小。在学习时只需要以交叉熵作为最优化目标函数，也就是说求$$\sum_i -y_ilog \hat{y_i}$$的最小值解，其中$$\hat{y_i} = logit(wx+b)$$. 
+因此mnist可以看成是以灰度图为输入，0~9其中一个数字为输出的多类别分类任务。对于多类别的分类任务来说，最简单的模型莫过于softmax lr, 也就是说以图像中每个像素点的灰度值作为特征，参数大小为$$n*n*1*10$$, 其中$$n*n$$为图片的像素大小。在学习时只需要以交叉熵作为最优化目标函数，也就是说求$$\sum_i -y_ilog \hat{y_i}$$的最小值解，其中$$\hat{y_i} = logit(wx+b)$$. 
 
 ![softmax-lr](/public/softmax-lr.png)
 
@@ -40,12 +40,11 @@ with tf.Session() as sess:
     print(accuracy.eval(feed_dict={x: mnist.test.images, y_: mnist.test.labels}))
 {% endhighlight %}
 
-由于tensorflow的声明式编程和延迟计算特性，从定义session那一行之前都属于计算图的声明，之后才是真正执行计算图的计算过程，而且这段程序中也是在执行计算过程时才喂训练数据给程序，也就是在开头定义的两个placeholder类型的x和y. 
+结合tf特性对这段程序作一些解读：
 
-计算图和机器学习算法的要素也是一一对应的：
-
-1. tensor包括训练数据和模型参数x, y, w, b. 它们构成计算图的数据输入
-2. operations包括inference、计算loss、最优化求解，分别对应于统计机器学习算法的三要素：模型、策略、求解算法
+1. 由于tensorflow的声明式编程和延迟计算特性，从定义session那一行之前都属于计算图的声明，之后才是真正执行计算图的计算过程
+2. 在执行计算过程时才喂训练数据给程序，也就是在开头定义的两个placeholder类型的x和y
+3. 计算图和机器学习算法的要素一一对应，其中tensor包括训练数据和模型参数x, y, w, b. 它们构成计算图的数据输入；operations包括inference、计算loss、最优化求解，分别对应于统计机器学习算法的三要素：模型、策略、求解算法
 
 ### **softmax lr的问题**
 在mnist数据上，softmax lr模型一般只能得到90%左右的精度，这是比较惨的表现。softmax lr的问题在于：
@@ -76,7 +75,6 @@ def weight_variable(shape):
 def bias_variable(shape):
     initial = tf.constant(0.1, shape=shape)
     return tf.Variable(initial)
-
 
 # 训练数据
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
