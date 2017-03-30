@@ -34,7 +34,7 @@ nce的出现正是为了解决这个问题的，解决方法的核心是通过�
 
 $$loss_{nec} = log\sigma(u_{w_o}v_{w_I}) + \sum_i^K E_{w_i from P_n(w)}log \sigma(-u_{w_i}v_{w_I})$$
 
-其中$$P_n(w)$$为负采样的分布，常取均匀分布；向量$$u$$为nec层的权重参数，$$v$$为向量嵌入层的参数。以上实际上是以$$w_I$$为输入词的K+1条样本对应的交叉熵损失函数。
+其中$$\sigma$$代表logit函数，$$P_n(w)$$为负采样的分布，常取均匀分布；向量$$u$$为nec层的权重参数，$$v$$为向量嵌入层的参数。以上实际上是以$$w_I$$为输入词的K+1条样本对应的交叉熵损失函数。
 
 ### 参考资料
 [1] *Distributed Representations of Words and Phrases and their Compositionality*
