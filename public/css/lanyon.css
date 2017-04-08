@@ -328,6 +328,17 @@ a.sidebar-nav-item:focus {
   color: #9a9a9a;
 }
 
+/* tags */
+.post-tags {
+  background: #90a959;
+  color: #fff;
+  padding: 0px 5px;
+  margin: 1px auto;
+  line-height: 24px;
+  display: inline-block;
+  text-decoration: none;
+}
+
 /* Related posts */
 .related {
   padding-top: 2rem;
