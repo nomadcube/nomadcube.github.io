@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: learning_to_rank
+tags: learning-to-rank
 ---
 
 在包含离散变量的分类模型中，odd ratio可以用来衡量某个离散的自变量对因变量的影响。
