@@ -4,7 +4,6 @@ tags: 语言模型 神经网络
 ---
 
 
-### **hierarchical softmax**
 hierarchical softmax则是由Frederic Morin和Yoshua Bengio在2005年的论文*Hierarchical Probabilistic Neural Network Language Model*中提出。提出的原因显然是为了解决full softmax模型的训练性能低下问题。
 
 基本思想是将$$P(v; w_{t-1}, ..., w_{t-n+1})$$进行分解。在分解之前，计算这个概率需要遍历词汇表。
