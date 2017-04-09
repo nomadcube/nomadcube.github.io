@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: 深度学习
+tags: word2vec 语言模型 神经网络
 ---
 
 nce和full softmax最大的区别有两个：

@@ -11,11 +11,11 @@ permalink:        pretty
 # Setup
 title:  wumulu
 tagline:             "ML practitioner"
-url:              http://lanyon.getpoole.com
+url:              https://nomadcube.github.io
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'wumengling'
+  url:            https://nomadcube.github.io
 
 paginate:         2
 
