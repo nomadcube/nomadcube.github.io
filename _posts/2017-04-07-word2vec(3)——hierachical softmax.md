@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: 语言模型 神经网络
+tags: 语言模型 神经网络 embedding
 ---
 
 
