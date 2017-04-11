@@ -23,7 +23,7 @@ word2vec的雏形在2003年由Yoshua Bengio等人在论文*A Neural Probabilisti
 1. 去掉隐藏层，从投影层直接连续到输出层，完全当成是词向量到输出层的多类别分类来做
 2. 解决计算softmax时分母中标准化项的问题，主要是hierarchical softmax的二叉树方法、negative sampling这两种解决方法
 
-其中negative sampling相对好理解，相当于是将多类别分类转成二元分类。
+其中negative sampling相对好理解，相当于是将多类别分类转成二元分类，见[word2vec(4)——nce](https://nomadcube.github.io/2017/03/30/word2vec(4)-nce/).
 
 hierarchical softmax就没那么直观了，可以想象成是先将原始词汇表中的V个词进行m个层级的归类，形成一个二叉树，其中根结点相当于是最大的那个类，包含了所有的词。在基于输入序列做预测时，相当于是由上而下、由粗至细的一层又一层的判断，每一层都是解决这个问题：是否属于大类$$C_i$$? 其中i指第i层。如此细分下去，直至叶节点，也就是原始的词汇。
 
