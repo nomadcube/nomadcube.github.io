@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: 语言模型 神经网络 embedding
+tags: 语言模型 神经网络 embedding 开源框架
 ---
 
 在[NNLM及一些变式](https://nomadcube.github.io/2017/04/10/word2vec(1)-NNLM%E5%8F%8A%E4%B8%80%E4%BA%9B%E5%8F%98%E5%BC%8F/)中提到negative sampling是其中一种优化NNLM训练性能的思路，其中最常用的negative sampling是Noise-Contrastive Estimation(NCE)，主要的作用是避免softmax时训练性能受限于词汇量大小。
@@ -27,6 +27,7 @@ $$LogLikelihood(w_O, w_{NEC}^{(1)}, ..., w_{NEC}^{(k)}, w_I; \Theta, U) = log \s
 
 这样NCE的权重能数$$\Theta$$仍然是$$PV$$维的，其中$$P$$为词向量长度，$$V$$为词汇量大小。假如将NNLM模型去掉隐藏层，那么投影层到输出层的连接权重也是$$PV$$维，优化点是在于将softmax改成了logit, 避免在算softmax分母的标准化项时需要用到V个词对应的权重向量。
 
+在用tensorflow实现nce + skip-gram 结构的word2vec模型时，首先按[word2vec(2)——skip gram](https://nomadcube.github.io/2017/04/10/word2vec(2)-skip-gram/)
 
 
 ### 参考资料
